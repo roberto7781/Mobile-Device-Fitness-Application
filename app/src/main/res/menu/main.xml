@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/privacyPolicy"
+        android:orderInCategory="1000"
+        android:title="Privacy Policy"
+
+        />
+
+    <item
+        android:id="@+id/termAndCondition"
+        android:orderInCategory="1001"
+        android:title="Terms and Condition" />
+
+    <item
+        android:id="@+id/share"
+        android:orderInCategory="1003"
+        android:title="Share" />
+
+</menu>

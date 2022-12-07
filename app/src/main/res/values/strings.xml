@@ -1,0 +1,153 @@
+<resources>
+    <string name="app_name">Fitness Application</string>
+
+    <string-array name="titleStory">
+        <item>Lift weights</item>
+        <item>Listen to music</item>
+        <item>Swap stretching for a dynamic warmup</item>
+        <item>Preface your workout with carbs</item>
+        <item>Do intervals</item>
+    </string-array>
+
+    <string-array name="detailStory">
+        <item>“If you just do cardio, you’re sabotaging yourself,” says Jacob Wilson, Ph.D., certified strength and conditioning specialist and associate editor of the Journal of Strength and Conditioning Research. “Your metabolism will actually go down, making weight loss more difficult. Resistance training, however, builds muscle to increase your metabolic rate.” That explains why, in one Harvard School of Public Health study of 10,500 adults, those who spent 20 minutes a day weight training gained less abdominal fat over the course of 12 years (compared to those who spent the same amount of time performing cardio).</item>
+        <item>Everyone knows that your favorite tunes can fire you up for a workout, but in one Indian Journal of Physiology and Pharmacology of 30 men and women, people who listened to music (especially slow music) after their workout recovered faster than did those who went sans tunes. “Music boosts the body’s levels of serotonin and dopamine, hormones that are known to foster recovery,” says Perkins . Try listening to a few of your favorite, most relaxing tracks as soon as you finish your workout. It will help your blood pressure and heart rate get back to normal and recovery happen ASAP.</item>
+        <item>Don’t stretch in vain. In one Austin State University study, people who warmed up with light leg extensions and squats were able to squat with 8.36% more weight during their workout than if they had performed typical “bend and hold” stretches. Their lower bodies were also 22.7% more stable. “Think of a rubber band,” says Wilson. “If you stretch it around a lot and then pull it back to shoot it, it’s not going to go as far. The same thing happens with your muscles and tendons.” However, dynamic bodyweight moves—ones that mimic the workout you’re about to perform—increase blood flow and improve your range of motion without compromising your muscles’ and tendons’ elastic properties. So for instance, if you’re about to go for a run, it’s a good idea to move through about five to 10 minutes of lunges, knee raises and leg swings before hitting the treadmill.</item>
+        <item>You might think of carbo-loading as something you do to run a better marathon. But eating carbs before your workout can also help you during those intervals, according to 2013 research published in Sports Medicine. “Carbs are your body’s primary fuel for any high-intensity workout, and when your body is fueled, your body is going to put forth a better effort and get a better value, both in terms of caloric expenditure and muscle growth, than it would if you were in fasted state,” says Wilson. So even if you like your morning workouts, make sure to eat some toast or oatmeal before you head out of the door.</item>
+        <item>Minute per minute, high-intensity intervals—periods of all-out effort interspersed with short, low-intensity “breaks”—come with more cardiovascular and fat-loss benefits than any other workout, says Wall. For instance, in one study from Human Performance Laboratory at the University of Wisconsin-La Crosse, people who performed a 20-minute interval workout with exercises including pushups, burpees, squats and lunges burned an average of 15 calories per minute—nearly twice as many as during long runs. To burn similar calories, follow the workout’s protocol: Perform as many reps as possible for 20 seconds, rest for 10 seconds and repeat for a total of four minutes. Rest one minute, then repeat for a total of four rounds.</item>
+    </string-array>
+
+    <string name="exercise_1_how_to">
+        1. Sit on the floor and lean upper body back until abs are engaged.\n
+        2. Legs should be lifted and bent at 90 degrees, and arms should be bent, hands clasped, with elbows wide. This is your starting position.\n
+        3. Rotate torso to right side so that right elbow is hovering just off mat.\n
+        4. Keep lower body still while rotating upper body to left side until left elbow is just off mat.\n
+        5. Return to center. Gaze follows hands as you move. That\'s one rep.
+    </string>
+
+    <string name="exercise_2_how_to">
+        1. Lie down on your back. Bend your legs and place feet firmly on the ground to stabilise your lower body. Cross your hands to opposite shoulders over your chest or place them behind your ears, without pulling on your neck.\n
+        2. Curl your upper body all the way up toward your knees. Exhale as you lift.\n
+        3. Slowly, lower yourself down, returning to your starting point. Inhale as you lower.
+    </string>
+
+    <string name="exercise_3_how_to">
+        1. Get into a push up position, with your elbows under your shoulders and your feet hip-width apart.\n
+        2. Bend your elbows and rest your weight on your forearms and on your toes, keeping your body in a straight line.\n
+        3. Hold for as long as possible.
+    </string>
+
+    <string name="exercise_4_how_to">
+        1. Lie down on your back, Bend your right leg and lift your knee as high as you can.\n
+        2. Rotate your torso to the right and bring your right knee to your left elbow.\n
+        3. Repeat on the opposite side and keep alternating sides until the set is complete.
+    </string>
+
+    <string name="exercise_5_how_to">
+        1. Lie on your back with your hands by your sides or underneath your glutes. Keep your legs straight or just slightly bent.\n
+        2. Raise your legs until your body is in an L shape.\n
+        3. Pause, lower both legs slowly and then return to the starting position.\n
+        4. Repeat until set is complete.
+    </string>
+
+    <string name="exercise_6_how_to">
+        1. Lie on your back, keep your knees bent, arms at the sides, and keep your back and feet flat on the mat.\n
+        2. Crunch forward and to the left, touching your left heel with your left hand and hold.\n
+        3. Return slowly to the starting position and repeat the movement on the right side.\n
+        4. Repeat this side-to-side movement until the set is complete.
+    </string>
+
+    <string name="exercise_7_how_to">
+        1. Lie down on the mat, keep your knees bent, your back and feet flat, and your hands supporting your head.\n
+        2. Lift your shoulders, squeeze your abdominal muscles and hold for 1 to 2 seconds.\n
+        3. Slowly return to the starting position and repeat until set is complete.
+    </string>
+
+    <string name="exercise_8_how_to">
+        1. With your legs extended back, place the hands below the shoulders, slightly wider than shoulder-width apart.\n
+        2. Start bending your elbows and lower your chest until it’s just above the floor.\n
+        3. Push back to the starting position. A 1-second push, 1-second pause, 2-second down count is ideal.\n
+        4. Repeat.
+    </string>
+
+    <string name="exercise_9_how_to">
+        1. Place your hands behind you onto a chair, so that your fingers face forward.\n
+        2. Extend your legs and start bending your elbows.\n
+        3. Lower your body until your arms are at a 90 degree angle.\n
+        4. Lift your body back up until your arms are straight.\n
+        5. Repeat.
+    </string>
+
+    <string name="exercise_10_how_to">
+        1. Exhale while pulling yourself up so your chin is level with the bar. Pause at the top.\n
+        2. Lower yourself (inhaling as you go down) until your elbows are straight.\n
+        3. Repeat the movement without touching the floor.
+    </string>
+
+    <string name="exercise_11_how_to">
+        1. While keeping your arms straight, move them back as far as possible until you feel the stretch in your chest.\n
+        2. Hold for 10 to 20 seconds and then relax.
+    </string>
+
+    <string name="exercise_12_how_to">
+        1. Start with your body in a straight line and your hands slightly wider than shoulder-width apart. Keep your toes and balls of the feet touching the floor.\n
+        2. Bring one knee up toward the center of your stomach and then quickly alternate between legs.\n
+        3. Continue alternating until the set is complete.
+    </string>
+
+    <string name="exercise_13_how_to">
+        1. Grab a set of dumbbells and bend your torso, until your chest is nearly parallel to the floor.\n
+        2. Raise your arms out to the sides as you lift the dumbbells.\n
+        3. Once both arms are parallel to the floor, pause, and then slowly lower them to the starting position.\n
+        4. Repeat.
+    </string>
+
+    <string name="exercise_14_how_to">
+        1. Start by laying face down on the ground. Support your body weight by balancing and placing your upper body on your forearms, keeping them at a 90 degree angle with your elbows under your shoulder.\n
+        2. Start the movement by extending your right arm and alternate leg straight out. Keeping arm and leg fully extended and parallel to the floor.\n
+        3. Return to the original position and repeat with opposite arm and leg. Continue for desired time.
+    </string>
+
+    <string name="exercise_15_how_to">
+        1. Stand upright with your legs together, arms at your sides.\n
+        2. Bend your knees slightly, and jump into the air.\n
+        3. As you jump, spread your legs to be about shoulder-width apart. Stretch your arms out and over your head.\n
+        4. Jump back to starting position.\n
+        5. Repeat.
+    </string>
+
+    <string name="exercise_16_how_to">
+        1. Stand facing a step, chair, box, or bench. Place your entire right foot onto the step.\n
+        2. Shift your weight into your right foot to step up onto the bench. Bring your left foot up to meet your right so you are standing with both feet on the bench.\n
+        3. Return to the starting position by stepping down with the right foot, then the left, so both feet are on the floor.\n
+    </string>
+
+    <string name="exercise_17_how_to">
+        1. Stand straight with your feet hip-width apart.\n
+        2. Step out to the side and transfer your weight to that leg.\n
+        3. Use your lead foot to push you back to the starting position.\n
+        4. Repeat and then switch sides.
+    </string>
+
+    <string name="exercise_18_how_to">
+        1. Place a step or a box behind you and stand up tall.\n
+        2. Position your right foot on top of the step, bend your knees and lower the hips until your left thigh is parallel to the floor.\n
+        3. Return to the starting position and repeat.\n
+        4. Switch legs.
+    </string>
+
+    <string name="exercise_19_how_to">
+        1. Lie on your back with your hands by your sides and your knees bent.\n
+        2. Lift your hips off the mat, while keeping your back straight, and pause for 1 second.\n
+        3. Return to the starting position and repeat the movement until the set is complete.
+    </string>
+
+    <string name="exercise_20_how_to">
+        1. Stand up with your feet shoulder-width apart.
+        2. Bend your knees, press your hips back and stop the movement once the hip joint is slightly lower than the knees.
+        3. Press your heels into the floor to return to the initial position.
+        4. Repeat until set is complete.
+    </string>
+
+
+</resources>
