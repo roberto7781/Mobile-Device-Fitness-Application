@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -14,8 +13,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import pl.droidsonroids.gif.GifImageView;
 
+//This class is the Java Class for the activity_exercise.xml
 public class ActivityExercise extends AppCompatActivity {
 
+    //Creating variables that will be used in the class
     private int buttonValue;
     private Button startBtn;
     private CountDownTimer countDownTimer;
@@ -30,16 +31,23 @@ public class ActivityExercise extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise);
+
+        //Initializing some of the variables
         GifImageView gifImageView = findViewById(R.id.exerciseGif);
         TextView howToDoText = findViewById(R.id.howToDoText);
 
+        //Getting the Intent that started the activity
         Intent intent = getIntent();
+
+        //Getting String from the previous Activity by using the Intent that started the activity
         buttonValue = Integer.parseInt(intent.getStringExtra("value"));
         repeatText = intent.getStringExtra("repeatText");
 
         TextView exerciseNameText = findViewById(R.id.exerciseRepeatText);
         exerciseNameText.setText(repeatText);
 
+        //Selection to determine what exercise that the user has chosen.
+        //Initialize the rest of the variables that will be used.
         switch (buttonValue) {
             case 1:
                 gifImageView.setImageResource(R.drawable.exercise_12);
@@ -203,45 +211,53 @@ public class ActivityExercise extends AppCompatActivity {
                 break;
         }
 
+        //Initialize the value from the id of the elements in the layout
         startBtn = findViewById(R.id.startBtn);
         textView = findViewById(R.id.time);
 
-        startBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (isTimerRunning) {
-                    stopTimer();
-                } else {
-                    startTimer();
-                }
+        //Create an on click listener when the start button is clicked
+        startBtn.setOnClickListener(view -> {
+            //Selection to determine whether the timer is running or not
+            if (isTimerRunning) {
+                stopTimer();
+            } else {
+                startTimer();
             }
         });
 
 
     }
 
+    //Method used to stop the countdown timer
     private void stopTimer() {
         countDownTimer.cancel();
         isTimerRunning = false;
+
+        //Change the start button text to "Start"
         startBtn.setText("Start");
 
     }
 
+    //Method used to start the countdown timer
     private void startTimer() {
+
+        //Getting the String of the text from a TextView
         final CharSequence value = textView.getText();
 
+        //Getting the Timer value
         String num1 = value.toString();
-        System.out.println(num1);
+
+        //Minute value
         String num2 = num1.substring(0, 2);
-        System.out.println("Num2: " + num2);
+
+        //Second value
         String num3 = num1.substring(3, 5);
-        System.out.println("Num3: " + num3);
 
-        final int number = Integer.parseInt(num2) * 1 + Integer.parseInt(num3);
+        //Change to milliseconds
+        final int number = Integer.parseInt(num2) + Integer.parseInt(num3);
         timerLeftMillis = number * 1000L;
-        System.out.println("Timer Left: " + timerLeftMillis);
 
-
+        //initialize a countDownTimer
         countDownTimer = new CountDownTimer(timerLeftMillis, 1000) {
             @Override
             public void onTick(long l) {
@@ -249,37 +265,33 @@ public class ActivityExercise extends AppCompatActivity {
                 updateTimer();
             }
 
+            //This method is invoke when the count down timer is finished
             @Override
             public void onFinish() {
+                //Getting the button value
                 int newValue = buttonValue;
-                if (newValue <= 20) {
-                    Intent currentIntent = getIntent();
-                    String userName = currentIntent.getStringExtra("username");
-                    String activityName = currentIntent.getStringExtra("activityName");
-                    Intent newIntent = new Intent(ActivityExercise.this, ExerciseResultActivity.class);
-                    newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    newIntent.putExtra("username", userName);
-                    newIntent.putExtra("value", String.valueOf(newValue));
-                    newIntent.putExtra("caloriesPerMinute", caloriesBurned);
-                    newIntent.putExtra("activityName", activityName);
-                    newIntent.putExtra("gifSrc", gifSrc);
-                    newIntent.putExtra("repeatText", repeatText);
-                    startActivity(newIntent);
-                } else {
-                    newValue = 1;
-                    Intent currentIntent = getIntent();
-                    String userName = currentIntent.getStringExtra("username");
-                    String activityName = currentIntent.getStringExtra("activityName");
-                    Intent newIntent = new Intent(ActivityExercise.this, ExerciseResultActivity.class);
-                    newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    newIntent.putExtra("username", userName);
-                    newIntent.putExtra("value", String.valueOf(newValue));
-                    newIntent.putExtra("caloriesPerMinute", caloriesBurned);
-                    newIntent.putExtra("activityName", activityName);
-                    newIntent.putExtra("gifSrc", gifSrc);
-                    newIntent.putExtra("repeatText", repeatText);
-                    startActivity(newIntent);
-                }
+
+                //Getting the Intent that started the activity
+                Intent currentIntent = getIntent();
+                //Getting String from the previous Activity by using the Intent that started the activity
+                String userName = currentIntent.getStringExtra("username");
+                String activityName = currentIntent.getStringExtra("activityName");
+
+                //Creating a new intent to activity_exercise.xml
+                Intent newIntent = new Intent(ActivityExercise.this, ExerciseResultActivity.class);
+
+                //Putting some values that will be used in the next activity
+                newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                newIntent.putExtra("username", userName);
+                newIntent.putExtra("value", String.valueOf(newValue));
+                newIntent.putExtra("caloriesPerMinute", caloriesBurned);
+                newIntent.putExtra("activityName", activityName);
+                newIntent.putExtra("gifSrc", gifSrc);
+                newIntent.putExtra("repeatText", repeatText);
+
+                //Starting an new activity based on the intent
+                startActivity(newIntent);
+
             }
         }.start();
         isTimerRunning = true;
@@ -287,27 +299,29 @@ public class ActivityExercise extends AppCompatActivity {
 
     }
 
+    //This method is used to update the timer value
     private void updateTimer() {
+
+        //Convert milliseconds to minute
         int minutes = (int) timerLeftMillis / 60000;
+
+        //Convert the rest of the milliseconds to second
         int seconds = (int) timerLeftMillis % 60000 / 1000;
-        System.out.println("Timer Left2: " + timerLeftMillis);
-        System.out.println("Seconds: " + seconds);
+
         String timeLeftText = "";
 
+        //Selection to determine the text of the time left from the countdown timer
         if (minutes < 10) {
             timeLeftText = "0";
-            timeLeftText += minutes + ":";
-        } else {
-            timeLeftText += minutes + ":";
         }
+        timeLeftText += minutes + ":";
 
         if (seconds < 10) {
             timeLeftText += "0";
-            timeLeftText += seconds;
-        } else {
-            timeLeftText += seconds;
         }
+        timeLeftText += seconds;
 
+        //Set the text
         textView.setText(timeLeftText);
     }
 

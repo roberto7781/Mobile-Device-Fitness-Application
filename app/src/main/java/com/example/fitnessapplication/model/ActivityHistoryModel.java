@@ -4,12 +4,14 @@ package com.example.fitnessapplication.model;
 //That will be used by the adapter class
 public class ActivityHistoryModel {
 
-    private String activityName;
-    private String caloriesBurned;
-    private String amountDone;
-    private String duration;
-    private int gifSrc;
+    //Creating variables that will be used by the activity_history_row.xml
+    private final String activityName;
+    private final String caloriesBurned;
+    private final String amountDone;
+    private final String duration;
+    private final int gifSrc;
 
+    //This is the constructor of the class
     public ActivityHistoryModel(String activityName, String caloriesBurned, String amountDone, String duration, int gifSrc) {
         this.activityName = activityName;
         this.caloriesBurned = caloriesBurned;
@@ -18,6 +20,7 @@ public class ActivityHistoryModel {
         this.gifSrc = gifSrc;
     }
 
+    //The methods bellow is the getter of the variables that were created.
     public String getActivityName() {
         return activityName;
     }
