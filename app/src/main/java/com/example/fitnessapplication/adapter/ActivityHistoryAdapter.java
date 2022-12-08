@@ -7,12 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-
 import com.example.fitnessapplication.R;
 import com.example.fitnessapplication.model.ActivityHistoryModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import pl.droidsonroids.gif.GifImageView;
@@ -22,17 +19,17 @@ public class ActivityHistoryAdapter extends ArrayAdapter<ActivityHistoryModel> {
 
     //This is the constructor of the class
     public ActivityHistoryAdapter(Context context, List<ActivityHistoryModel> activityHistories) {
-        super(context, 0 , activityHistories);
+        super(context, 0, activityHistories);
     }
 
     //The getView method is an inherited method from ArrayAdapter class
     //This method is used to get the elements in the xml file and
     //inject the value and it will return the View that has been injected
     @Override
-    public View getView(int position, View convertView, ViewGroup parent){
+    public View getView(int position, View convertView, ViewGroup parent) {
         ActivityHistoryModel activityHistoryModel = getItem(position);
 
-        if(convertView == null){
+        if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_history_row, parent, false);
         }
 

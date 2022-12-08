@@ -1,18 +1,19 @@
 package com.example.fitnessapplication;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+//This class is the Java Class for the activity_leg_exercise.xml
 public class LegExerciseActivity extends AppCompatActivity {
 
+    //Creating variables that will be used in the class
     private int[] exerciseList;
     private TextView[] exerciseTextView;
     private String repeatText;
@@ -22,6 +23,7 @@ public class LegExerciseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leg_exercise);
 
+        //Initializing all of the variables
         exerciseList = new int[]{
                 R.id.exercise_15, R.id.exercise_16, R.id.exercise_17, R.id.exercise_18, R.id.exercise_19, R.id.exercise_20
         };
@@ -36,43 +38,51 @@ public class LegExerciseActivity extends AppCompatActivity {
                 findViewById(R.id.bulgarianSplitSquatAmountText), findViewById(R.id.gluteBridgeAmountText), findViewById(R.id.squatAmountText)
         };
 
+        //Getting the Intent that started the activity
         Intent currentIntent = getIntent();
 
+        //Getting String from the previous Activity by using the Intent that started the activity
         String workoutDifficulties = currentIntent.getStringExtra("workoutDifficulties");
 
-        if(workoutDifficulties.equals("easy")){
-            for (int i = 0; i < exerciseAmountTextView.length; i++) {
-                repeatText = "Repeat 4 Times";
-                exerciseAmountTextView[i].setText("Repeat 4 Times");
-            }
-        }
-        else if(workoutDifficulties.equals("medium")){
-            for (int i = 0; i < exerciseAmountTextView.length; i++) {
-                repeatText = "Repeat 6 Times";
-                exerciseAmountTextView[i].setText("Repeat 6 Times");
-            }
-        }
-        else if(workoutDifficulties.equals("hard")){
-            for (int i = 0; i < exerciseAmountTextView.length; i++) {
-                repeatText = "Repeat 8 Times";
-                exerciseAmountTextView[i].setText("Repeat 8 Times");
-            }
+        // Selection to determine whether the user choose easy, medium, or hard difficulty.
+        // Set the number of exercise done according to the difficulty.
+        switch (workoutDifficulties) {
+            case "easy":
+                for (TextView textView : exerciseAmountTextView) {
+                    repeatText = "Repeat 4 Times";
+                    textView.setText("Repeat 4 Times");
+                }
+                break;
+            case "medium":
+                for (TextView textView : exerciseAmountTextView) {
+                    repeatText = "Repeat 6 Times";
+                    textView.setText("Repeat 6 Times");
+                }
+                break;
+            case "hard":
+                for (TextView textView : exerciseAmountTextView) {
+                    repeatText = "Repeat 8 Times";
+                    textView.setText("Repeat 8 Times");
+                }
+                break;
         }
 
 
     }
 
-
+    //The implementation of an onClick from an element in the activity_leg_exercise.xml
     public void imageButtonClicked(View view) {
         for (int i = 1; i <= exerciseList.length; i++) {
-            System.out.println("Testing" + i);
-            if (view.getId() == exerciseList[i-1]) {
-                System.out.println("Value+ " + i);
-                Log.i("FIRST", String.valueOf(i));
+            if (view.getId() == exerciseList[i - 1]) {
+                //Creating a new intent to activity_exercise.xml
                 Intent newIntent = new Intent(LegExerciseActivity.this, ActivityExercise.class);
-                newIntent.putExtra("value", String.valueOf(i+14));
-                newIntent.putExtra("activityName", exerciseTextView[i-1].getText().toString());
+
+                //Putting some values that will be used in the next activity
+                newIntent.putExtra("value", String.valueOf(i + 14));
+                newIntent.putExtra("activityName", exerciseTextView[i - 1].getText().toString());
                 newIntent.putExtra("repeatText", repeatText);
+
+                //Starting an new activity based on the intent
                 startActivity(newIntent);
                 break;
             }

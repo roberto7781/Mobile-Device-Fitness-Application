@@ -16,37 +16,43 @@ import com.example.fitnessapplication.adapter.ActivityHistoryAdapter;
 import com.example.fitnessapplication.model.ActivityHistoryModel;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
+//This class is the Java Class for the activity_history.xml
 public class ExerciseHistoryActivity extends AppCompatActivity {
-
-    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        //Initializing shared preferences from the default application context shared preferences
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
+        //Initializing the exercise history db
         ExerciseHistoryDB exerciseHistoryDB = new ExerciseHistoryDB(this);
 
+        //Getting the current logged in username from the shared preferences
         String username = sharedPreferences.getString("username", "Not Found");
 
+        //Getting all user activity history by using a method from the ExerciseHistoryDB class.
         List<String> activityHistory = exerciseHistoryDB.getAllData(username);
-        List<ActivityHistoryModel> activityHistoryModelList = new ArrayList<>();
 
+        //Turn the List of Activity History to a List of ActivityHistoryModel
+        List<ActivityHistoryModel> activityHistoryModelList = new ArrayList<>();
         for (int i = 0; i < activityHistory.size(); i++) {
             String[] messages = activityHistory.get(i).split(";");
-            System.out.println(Arrays.toString(messages) + "ActivityHistoryTest");
             ActivityHistoryModel activityHistoryModel = new ActivityHistoryModel(messages[0], messages[1], messages[2], messages[3], Integer.parseInt(messages[4]));
             activityHistoryModelList.add(activityHistoryModel);
         }
 
+        //Initializing the ActivityHistoryAdapter
         ActivityHistoryAdapter activityHistoryAdapter = new ActivityHistoryAdapter(this, activityHistoryModelList);
 
+        //Initializing the ListView from the layout
         ListView listView = findViewById(R.id.list);
+
+        //Setting the list view content by using an adapter
         listView.setAdapter(activityHistoryAdapter);
     }
 
