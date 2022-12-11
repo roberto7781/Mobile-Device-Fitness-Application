@@ -6,25 +6,26 @@
     android:background="#fff"
     tools:context=".ExerciseHistoryActivity">
 
+    <!--    Linear Layout for the Toolbar-->
     <LinearLayout
         android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
+        <!--Toolbar Elements-->
         <androidx.appcompat.widget.Toolbar
             android:layout_width="fill_parent"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:background="#3889E9">
-
+            <!--ImageView to show back button-->
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="goBack"
                 android:scaleType="fitXY"
                 android:src="@drawable/ic_baseline_arrow_back_24" />
-
+            <!--            Text Element Inside the Toolbar-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -38,12 +39,13 @@
         </androidx.appcompat.widget.Toolbar>
     </LinearLayout>
 
+    <!--    RelativeLayout to store the ListView-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/linear"
         android:layout_marginTop="5dp">
-
+        <!--ListView for the activity history-->
         <ListView
             android:id="@+id/list"
             android:layout_width="match_parent"

@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:padding="1dp">
 
+    <!--    TextView to show tips and trick title-->
     <TextView
         android:id="@+id/rowtxt"
         android:layout_width="fill_parent"

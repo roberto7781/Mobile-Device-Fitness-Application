@@ -10,7 +10,7 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
-
+    <!--CardView element that will be used to store all the login UI elements-->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,14 +19,15 @@
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
 
+        <!--        Vertical Linear Layout-->
         <LinearLayout
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:orientation="vertical"
             android:padding="24dp">
 
+            <!--            TextView to show the Login Text-->
             <TextView
                 android:id="@+id/signIn"
                 android:layout_width="match_parent"
@@ -39,6 +40,7 @@
                 android:textSize="35sp"
                 android:textStyle="bold" />
 
+            <!--            EditText elements to take username input-->
             <EditText
                 android:id="@+id/username"
                 android:layout_width="match_parent"
@@ -54,6 +56,7 @@
                 android:hint="Username"
                 android:padding="8dp" />
 
+            <!--            EditText elements to take password input-->
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
@@ -65,11 +68,12 @@
                 android:background="@drawable/round_border"
                 android:drawableLeft="@drawable/ic_baseline_lock_24_gray"
                 android:drawablePadding="8dp"
-                android:hint="Password"
                 android:fontFamily="@font/poppins"
+                android:hint="Password"
                 android:inputType="textPassword"
                 android:padding="8dp" />
 
+            <!--            Button to go to main activity (When user credentials is valid)-->
             <Button
                 android:id="@+id/loginBtn"
                 android:layout_width="match_parent"
@@ -77,23 +81,24 @@
                 android:layout_margin="20dp"
                 android:background="@drawable/round_bg"
                 android:backgroundTint="#1448FF"
-                android:text="Login"
                 android:fontFamily="@font/poppins"
+                android:text="Login"
                 android:textColor="@color/white" />
 
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <!--    TextView so the user can go to the register activity-->
     <TextView
         android:id="@+id/signUpText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
         android:gravity="center"
         android:onClick="goToRegisterPage"
         android:text="New User? Register Now"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:fontFamily="@font/poppins"
         android:textStyle="bold" />
 </LinearLayout>

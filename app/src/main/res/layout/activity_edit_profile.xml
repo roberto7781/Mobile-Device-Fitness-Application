@@ -10,7 +10,7 @@
     android:orientation="vertical"
     tools:context=".EditProfileActivity">
 
-
+    <!--CardView element that will be used to store all the edit profile UI elements-->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,16 +19,17 @@
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
 
+        <!--        Vertical Linear Layout-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-
             android:orientation="vertical"
             android:padding="24dp">
 
+            <!--            TextView to show the Edit Profile Text-->
             <TextView
-                android:id="@+id/signIn"
+                android:id="@+id/editProfile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -39,6 +40,7 @@
                 android:textSize="35sp"
                 android:textStyle="bold" />
 
+            <!--            EditText elements to take username input-->
             <EditText
                 android:id="@+id/username"
                 android:layout_width="match_parent"
@@ -55,6 +57,7 @@
                 android:inputType="text"
                 android:padding="8dp" />
 
+            <!--            EditText elements to take old password input-->
             <EditText
                 android:id="@+id/oldpassword"
                 android:layout_width="match_parent"
@@ -71,6 +74,7 @@
                 android:inputType="textPassword"
                 android:padding="8dp" />
 
+            <!--            EditText elements to take new password input-->
             <EditText
                 android:id="@+id/newpassword"
                 android:layout_width="match_parent"
@@ -87,6 +91,7 @@
                 android:inputType="textPassword"
                 android:padding="8dp" />
 
+            <!--            Button to go to login activity (When user credentials is valid)-->
             <Button
                 android:id="@+id/editProfileBtn"
                 android:layout_width="match_parent"
@@ -102,6 +107,7 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+<!--    Button so the user can logged out of their account-->
     <Button
         android:id="@+id/logoutBtn"
         android:layout_width="match_parent"

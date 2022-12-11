@@ -6,43 +6,47 @@
     android:background="#FFF"
     tools:context=".TipsDetail">
 
+
+    <!--    Linear Layout for the Toolbar-->
     <LinearLayout
         android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
+        <!--Toolbar Elements-->
         <androidx.appcompat.widget.Toolbar
             android:layout_width="fill_parent"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:background="@color/primary">
-
+            android:background="#3889E9">
+            <!--ImageView to show back button-->
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="goBack"
                 android:scaleType="fitXY"
                 android:src="@drawable/ic_baseline_arrow_back_24" />
-
+            <!--            Text Element Inside the Toolbar-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/poppins"
                 android:paddingLeft="10dp"
-                android:text="Tips and Trick"
+                android:text="Exercise History"
                 android:textColor="#FFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </androidx.appcompat.widget.Toolbar>
     </LinearLayout>
 
+<!--    ScrollView to store the tips and trick detail-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/linear">
 
+<!--        TextView to show tips and trick detail-->
         <TextView
             android:id="@+id/text"
             android:layout_width="match_parent"

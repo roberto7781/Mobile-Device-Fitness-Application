@@ -7,17 +7,19 @@
     android:orientation="vertical"
     tools:context=".ExerciseResultActivity">
 
+    <!--    TextView to show the page title-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="Workout \nCompleted"
         android:fontFamily="@font/poppins"
+        android:text="Workout \nCompleted"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textFontWeight="600"
         android:textSize="40sp" />
 
+    <!--    ImageView to show calorie icon-->
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,41 +27,42 @@
         android:layout_marginTop="70dp"
         android:src="@drawable/calories" />
 
-                <TextView
-                    android:id="@+id/totalCaloriesText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:text="21837129"
-                    android:fontFamily="@font/poppins"
-                    android:textSize="64sp"
-                    android:layout_marginTop="20dp"
-                    />
+    <!--    TextView to total calories burned-->
+    <TextView
+        android:id="@+id/totalCaloriesText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins"
+        android:text="21837129"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="64sp" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="KCAL"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins"
-                    android:textSize="40sp"
-                />
-                <Button
-                    android:id="@+id/startBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="45dp"
-                    android:background="@drawable/button_bg"
-                    android:backgroundTint="#1448FF"
-                    android:gravity="center"
-                    android:text="Done"
-                    android:fontFamily="@font/poppins"
-                    android:textAllCaps="false"
-                    android:textColor="#FFF"
-                    android:textSize="24sp" />
-    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins"
+        android:text="KCAL"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="40sp" />
+
+    <!--    Button to go to next activity-->
+    <Button
+        android:id="@+id/startBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/button_bg"
+        android:backgroundTint="#1448FF"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:text="Done"
+        android:textAllCaps="false"
+        android:textColor="#FFF"
+        android:textSize="24sp" />
+
 </LinearLayout>

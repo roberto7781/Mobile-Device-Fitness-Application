@@ -4,12 +4,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 //This class is the Java Class for the activity_result.xml
@@ -64,30 +61,5 @@ public class ExerciseResultActivity extends AppCompatActivity {
             startActivity(newIntent);
         });
 
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem menuItem) {
-        int id = menuItem.getItemId();
-
-        if (id == R.id.privacyPolicy) {
-            return true;
-        }
-
-        if (id == R.id.termAndCondition) {
-            return true;
-        }
-
-        if (id == R.id.share) {
-            return true;
-        }
-
-        return true;
     }
 }
