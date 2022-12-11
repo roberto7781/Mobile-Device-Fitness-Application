@@ -1,13 +1,9 @@
 package com.example.fitnessapplication;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 //This class is the Java Class for the main_activity.xml
@@ -18,48 +14,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem menuItem) {
-        int id = menuItem.getItemId();
-
-        if (id == R.id.privacyPolicy) {
-
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"));
-            startActivity(intent);
-
-            return true;
-        }
-
-        if (id == R.id.termAndCondition) {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"));
-            startActivity(intent);
-
-            return true;
-        }
-
-        if (id == R.id.share) {
-
-            Intent intent = new Intent(Intent.ACTION_SEND);
-            intent.setType("text/plain");
-
-            String shareBody = "Testing Share Application";
-            String shareHub = "Test";
-            intent.putExtra(Intent.EXTRA_SUBJECT, shareHub);
-            intent.putExtra(Intent.EXTRA_TEXT, shareBody);
-            startActivity(Intent.createChooser(intent, "Share Using"));
-
-            return true;
-        }
-
-        return true;
     }
 
 

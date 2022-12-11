@@ -2,13 +2,10 @@ package com.example.fitnessapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TipsActivity extends AppCompatActivity {
@@ -67,28 +64,4 @@ public class TipsActivity extends AppCompatActivity {
         finish();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem menuItem) {
-        int id = menuItem.getItemId();
-
-        if (id == R.id.privacyPolicy) {
-            return true;
-        }
-
-        if (id == R.id.termAndCondition) {
-            return true;
-        }
-
-        if (id == R.id.share) {
-            return true;
-        }
-
-        return true;
-    }
 }

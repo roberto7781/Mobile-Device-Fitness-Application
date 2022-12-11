@@ -8,18 +8,19 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <!--    HorizontalScrollView to store the exercise type-->
     <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_rect_bg"
         android:fillViewport="true"
         android:scrollbars="none">
-
+        <!--Horizontal LinearLayout to store Exercise Card View-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
+            <!--CardView to store all of the exercise elements-->
             <androidx.cardview.widget.CardView
                 android:layout_width="180dp"
                 android:layout_height="260dp"
@@ -31,17 +32,20 @@
                 app:cardCornerRadius="20dp"
                 app:cardElevation="20dp">
 
+                <!--                Vertical LinearLayout-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
+                    <!--                    Exercise Image-->
                     <ImageView
                         android:layout_width="170dp"
                         android:layout_height="150dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/abs_exercise_image" />
 
+                    <!--                    TextView for exercise title-->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -54,12 +58,13 @@
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
+                    <!--                    Horizontal LinearLayout to store exercise time and button-->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-
+                        <!--TextView to show how long will the exercise take-->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -72,6 +77,7 @@
                             android:text="8 Min"
                             android:textColor="#595959" />
 
+                        <!--                        ImageButton to go to the exercise menu-->
                         <ImageButton
                             android:id="@+id/startAbsExerciseActivity"
                             android:layout_width="36dp"
@@ -83,15 +89,11 @@
                             android:onClick="absWorkout"
                             android:padding="10dp"
                             android:src="@drawable/ic_outline_play_arrow_24" />
-
                     </LinearLayout>
-
-
                 </LinearLayout>
-
-
             </androidx.cardview.widget.CardView>
 
+            <!--CardView to store all of the exercise elements-->
             <androidx.cardview.widget.CardView
                 android:layout_width="180dp"
                 android:layout_height="260dp"
@@ -103,17 +105,20 @@
                 app:cardCornerRadius="20dp"
                 app:cardElevation="20dp">
 
+                <!--                Vertical LinearLayout-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
+                    <!--                    Exercise Image-->
                     <ImageView
                         android:layout_width="170dp"
                         android:layout_height="150dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/leg_exercise_image" />
 
+                    <!--                    TextView for exercise title-->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -126,12 +131,13 @@
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
+                    <!--                    Horizontal LinearLayout to store exercise time and button-->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-
+                        <!--TextView to show how long will the exercise take-->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -164,6 +170,7 @@
 
             </androidx.cardview.widget.CardView>
 
+            <!--CardView to store all of the exercise elements-->
             <androidx.cardview.widget.CardView
                 android:layout_width="180dp"
                 android:layout_height="260dp"
@@ -175,17 +182,20 @@
                 app:cardCornerRadius="20dp"
                 app:cardElevation="20dp">
 
+                <!--                Vertical LinearLayout-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
+                    <!--                    Exercise Gif Image-->
                     <ImageView
                         android:layout_width="170dp"
                         android:layout_height="150dp"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/arm_exercise_image" />
 
+                    <!--                    TextView for exercise title-->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -198,12 +208,13 @@
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
+                    <!--                    Horizontal LinearLayout to store exercise time and button-->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-
+                        <!--TextView to show how long will the exercise take-->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -216,6 +227,7 @@
                             android:text="8 Min"
                             android:textColor="#595959" />
 
+                        <!--                        ImageButton to go to the exercise menu-->
                         <ImageButton
                             android:id="@+id/startArmExerciseActivity"
                             android:layout_width="36dp"
@@ -241,252 +253,257 @@
 
     </HorizontalScrollView>
 
+    <!--    ScrollView to store all of the other menu-->
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scrollbars="none">
 
+        <!--        Vertical LinearLayout-->
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="vertical">
 
+            <!--            CardView to store all of the menu elements-->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="96dp"
                 android:layout_margin="10dp"
                 android:backgroundTint="#F3F3F3"
                 android:onClick="activityHistory"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="5dp">
 
+                <!--                Horizontal LinearLayout-->
                 <LinearLayout
                     android:layout_width="fill_parent"
-                    android:layout_height="96dp"
-                    android:orientation="vertical">
+                    android:layout_height="fill_parent"
+                    android:orientation="horizontal">
 
+                    <!--                    Vertical LinearLayout to store the menu icon/logo-->
                     <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:orientation="horizontal">
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
+                        <!--                        Horizontal LinearLayout so the elements inside can be centered horizontally-->
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:orientation="vertical">
+                            android:layout_marginLeft="20dp"
+                            android:orientation="horizontal">
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="20dp"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:layout_width="60dp"
-                                    android:layout_height="60dp"
-                                    android:layout_gravity="center_vertical"
-                                    android:background="@drawable/rounded_rect_icon"
-                                    android:padding="10dp"
-                                    android:src="@drawable/ic_baseline_history_24_gray" />
-
-                            </LinearLayout>
-
+                            <!--                            ImageView for the icon-->
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/rounded_rect_icon"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_baseline_history_24_gray" />
 
                         </LinearLayout>
 
+
+                    </LinearLayout>
+
+                    <!--                    Vertical LinearLayout to store the menu title and arrow-->
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <!--                        Horizontal LinearLayout so the elements inside can be centered horizontally-->
                         <LinearLayout
                             android:layout_width="fill_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical">
+                            android:orientation="horizontal">
 
-                            <LinearLayout
+                            <!--                            TextView for menu title-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="25dp"
+                                android:fontFamily="@font/poppins"
+                                android:gravity="center_vertical"
+                                android:text="Exercise \nHistory"
+                                android:textColor="#595959"
+                                android:textFontWeight="500"
+                                android:textSize="25sp" />
+
+                            <!--                            TextView for arrow-->
+                            <TextView
                                 android:layout_width="fill_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center_vertical"
-                                    android:layout_marginStart="25dp"
-                                    android:fontFamily="@font/poppins"
-                                    android:gravity="center_vertical"
-                                    android:text="Exercise \nHistory"
-                                    android:textColor="#595959"
-                                    android:textFontWeight="500"
-                                    android:textSize="25sp" />
-
-                                <TextView
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="fill_parent"
-                                    android:layout_marginRight="20dp"
-                                    android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24_main_page" />
-                            </LinearLayout>
-
-
+                                android:layout_height="fill_parent"
+                                android:layout_marginRight="20dp"
+                                android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24_main_page" />
                         </LinearLayout>
-                    </LinearLayout>
 
+
+                    </LinearLayout>
                 </LinearLayout>
+
+
             </androidx.cardview.widget.CardView>
 
+            <!--            CardView to store all of the menu elements-->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="96dp"
                 android:layout_margin="10dp"
                 android:backgroundTint="#F3F3F3"
                 android:onClick="tips"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="5dp">
 
+                <!--                Horizontal LinearLayout-->
                 <LinearLayout
                     android:layout_width="fill_parent"
-                    android:layout_height="96dp"
-                    android:orientation="vertical">
+                    android:layout_height="fill_parent"
+                    android:orientation="horizontal">
 
+                    <!--                    Vertical LinearLayout to store the menu icon/logo-->
                     <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:orientation="horizontal">
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
+                        <!--                        Horizontal LinearLayout so the elements inside can be centered horizontally-->
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:orientation="vertical">
+                            android:layout_marginLeft="20dp"
+                            android:orientation="horizontal">
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="20dp"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:layout_width="60dp"
-                                    android:layout_height="60dp"
-                                    android:layout_gravity="center_vertical"
-                                    android:background="@drawable/rounded_rect_icon"
-                                    android:padding="10dp"
-                                    android:src="@drawable/ic_outline_tips_and_updates_24_main_page" />
-
-                            </LinearLayout>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <LinearLayout
-                                android:layout_width="fill_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center_vertical"
-                                    android:layout_marginStart="25dp"
-                                    android:fontFamily="@font/poppins"
-                                    android:gravity="center_vertical"
-                                    android:text="Tips \n and Trick"
-                                    android:textColor="#595959"
-                                    android:textFontWeight="500"
-                                    android:textSize="25sp" />
-
-                                <TextView
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="fill_parent"
-                                    android:layout_marginRight="20dp"
-                                    android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24_main_page" />
-                            </LinearLayout>
-
-
+                            <!--                            ImageView for the icon-->
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/rounded_rect_icon"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_outline_tips_and_updates_24_main_page" />
                         </LinearLayout>
                     </LinearLayout>
 
+                    <!--                    Vertical LinearLayout to store the menu title and arrow-->
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <!--                        Horizontal LinearLayout so the elements inside can be centered horizontally-->
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <!--                            TextView for menu title-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="25dp"
+                                android:fontFamily="@font/poppins"
+                                android:gravity="center_vertical"
+                                android:text="Tips \n and Trick"
+                                android:textColor="#595959"
+                                android:textFontWeight="500"
+                                android:textSize="25sp" />
+
+                            <!--                            TextView for arrow-->
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_marginRight="20dp"
+                                android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24_main_page" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            <!--            CardView to store all of the menu elements-->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="96dp"
                 android:layout_margin="10dp"
                 android:backgroundTint="#F3F3F3"
                 android:onClick="goToProfilePage"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="5dp">
 
+                <!--                Horizontal LinearLayout-->
                 <LinearLayout
                     android:layout_width="fill_parent"
-                    android:layout_height="96dp"
-                    android:orientation="vertical">
+                    android:layout_height="fill_parent"
+                    android:orientation="horizontal">
 
+                    <!--                    Vertical LinearLayout to store the menu icon/logo-->
                     <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:orientation="horizontal">
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
+                        <!--                        Horizontal LinearLayout so the elements inside can be centered horizontally-->
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:orientation="vertical">
+                            android:layout_marginLeft="20dp"
+                            android:orientation="horizontal">
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="20dp"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:layout_width="60dp"
-                                    android:layout_height="60dp"
-                                    android:layout_gravity="center_vertical"
-                                    android:background="@drawable/rounded_rect_icon"
-                                    android:padding="10dp"
-                                    android:src="@drawable/ic_outline_person_24_main_page" />
-
-                            </LinearLayout>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <LinearLayout
-                                android:layout_width="fill_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center_vertical"
-                                    android:layout_marginStart="25dp"
-                                    android:fontFamily="@font/poppins"
-                                    android:gravity="center_vertical"
-                                    android:text="Profile"
-                                    android:textColor="#595959"
-                                    android:textFontWeight="500"
-                                    android:textSize="25sp" />
-
-                                <TextView
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="fill_parent"
-                                    android:layout_marginRight="20dp"
-                                    android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24_main_page" />
-                            </LinearLayout>
-
-
+                            <!--                            ImageView for the icon-->
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/rounded_rect_icon"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_outline_person_24_main_page" />
                         </LinearLayout>
                     </LinearLayout>
 
+                    <!--                    Vertical LinearLayout to store the menu title and arrow-->
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <!--                        Horizontal LinearLayout so the elements inside can be centered horizontally-->
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <!--                            TextView for menu title-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="25dp"
+                                android:fontFamily="@font/poppins"
+                                android:gravity="center_vertical"
+                                android:text="Profile"
+                                android:textColor="#595959"
+                                android:textFontWeight="500"
+                                android:textSize="25sp" />
+
+                            <!--                            TextView for arrow-->
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_marginRight="20dp"
+                                android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24_main_page" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>

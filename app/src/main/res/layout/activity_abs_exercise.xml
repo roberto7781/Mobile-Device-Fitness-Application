@@ -7,24 +7,19 @@
     android:orientation="vertical"
     tools:context=".AbsExerciseActivity">
 
+    <!--    Linear Layout for the Toolbar-->
     <LinearLayout
         android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
+        <!--Toolbar Elements-->
         <androidx.appcompat.widget.Toolbar
             android:layout_width="fill_parent"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:background="@color/primary">
-            <!--            <ImageView-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:scaleType="fitXY"-->
-            <!--                android:onClick="goBack"-->
-            <!--                android:src="@drawable/ic_baseline_arrow_back_24"/>-->
-
+            <!--            Text Element Inside the Toolbar-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -38,591 +33,577 @@
         </androidx.appcompat.widget.Toolbar>
     </LinearLayout>
 
-
+    <!--ScrollView to store all of the exercises-->
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scrollbars="none">
 
+        <!--        LinearLayout to carry all of the exercises and its elements-->
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--            Horizontal LinearLayout to act as a row for the exercise -->
             <LinearLayout
+                android:id="@+id/exercise_1"
                 android:layout_width="fill_parent"
                 android:layout_height="110dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:layout_marginTop="10dp"
+                android:onClick="imageButtonClicked"
+                android:orientation="horizontal">
 
+                <!--                Vertical Linear Layout for the Exercise details (Text)-->
                 <LinearLayout
-                    android:id="@+id/exercise_1"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:onClick="imageButtonClicked"
-                    android:orientation="horizontal">
+                    android:layout_weight="1.0"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="1.0"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-                        <TextView
-                            android:id="@+id/seatedRotationText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="Seated Rotation"
-                            android:textAllCaps="true"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/seatedRotationAmountText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="Repeat 2 Times"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="01:00 MIN"
-                            android:textColor="@color/black" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2.0">
-
-                        <pl.droidsonroids.gif.GifImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/exercise_12" />
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/seatedRotationText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="0"
-                        android:gravity="center">
+                        android:fontFamily="@font/poppins"
+                        android:text="Seated Rotation"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
 
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="5dp"
-                            android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
-                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/seatedRotationAmountText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Repeat 2 Times"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="01:00 MIN"
+                        android:textColor="@color/black" />
                 </LinearLayout>
 
+                <!--                Vertical LinearLayout for the exercise gif-->
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.0"
+                    android:orientation="vertical">
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/exercise_12" />
+                </LinearLayout>
+
+                <!--                Vertical LinearLayout for the arrow Image View-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+                </LinearLayout>
             </LinearLayout>
+
+
+            <!--            TableRow to create a horizontal line to separate the exercise-->
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dp"
+                android:background="@color/black" />
 
             <!--                Exercise 2-->
+            <!--            Horizontal LinearLayout to act as a row for the exercise -->
+            <LinearLayout
+                android:id="@+id/exercise_2"
+                android:layout_width="fill_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="10dp"
+                android:onClick="imageButtonClicked"
+                android:orientation="horizontal"
+                android:padding="10dp">
 
+                <!--                Vertical Linear Layout for the Exercise details (Text)-->
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/sitUpText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Sit Up"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/sitUpAmountText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Repeat 2 Times"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="01:00 MIN"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <!--                Vertical LinearLayout for the exercise gif-->
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.0">
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/exercise_2" />
+                </LinearLayout>
+
+                <!--                Vertical LinearLayout for the arrow Image View-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--            TableRow to create a horizontal line to separate the exercise-->
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="1.0dp"
                 android:background="@color/black" />
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="110dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:id="@+id/exercise_2"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:onClick="imageButtonClicked"
-                    android:orientation="horizontal"
-                    android:padding="10dp">
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="1.0"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/sitUpText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="Sit Up"
-                            android:textAllCaps="true"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/sitUpAmountText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="Repeat 2 Times"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="01:00 MIN"
-                            android:textColor="@color/black" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2.0">
-
-                        <pl.droidsonroids.gif.GifImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/exercise_2" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="0"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="5dp"
-                            android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
-                    </LinearLayout>
-                </LinearLayout>
-
-            </LinearLayout>
 
             <!--                Exercise 3-->
+            <!--            Horizontal LinearLayout to act as a row for the exercise -->
+            <LinearLayout
+                android:id="@+id/exercise_3"
+                android:layout_width="fill_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="10dp"
+                android:onClick="imageButtonClicked"
+                android:orientation="horizontal"
+                android:padding="10dp">
 
+                <!--                Vertical Linear Layout for the Exercise details (Text)-->
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/plankText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Plank"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/plankAmountText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Repeat 2 Times"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="01:00 MIN"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <!--                Vertical LinearLayout for the exercise gif-->
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.0">
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/exercise_11" />
+                </LinearLayout>
+
+                <!--                Vertical LinearLayout for the arrow Image View-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--            TableRow to create a horizontal line to separate the exercise-->
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="1.0dp"
                 android:background="@color/black" />
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="110dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:id="@+id/exercise_3"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:onClick="imageButtonClicked"
-                    android:orientation="horizontal"
-                    android:padding="10dp">
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="1.0"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/plankText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="Plank"
-                            android:textAllCaps="true"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/plankAmountText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="Repeat 2 Times"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="01:00 MIN"
-                            android:textColor="@color/black" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2.0">
-
-                        <pl.droidsonroids.gif.GifImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/exercise_11" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="0"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="5dp"
-                            android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
-                    </LinearLayout>
-                </LinearLayout>
-
-            </LinearLayout>
 
             <!--                Exercise 4-->
+            <!--            Horizontal LinearLayout to act as a row for the exercise -->
+            <LinearLayout
+                android:id="@+id/exercise_4"
+                android:layout_width="fill_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="10dp"
+                android:onClick="imageButtonClicked"
+                android:orientation="horizontal"
+                android:padding="10dp">
 
+                <!--                Vertical Linear Layout for the Exercise details (Text)-->
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/crossKneeToElbowText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Cross Knees to Elbow"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/crossKneeToElbowAmountText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Repeat 2 Times"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="01:00 MIN"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <!--                Vertical LinearLayout for the exercise gif-->
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.0">
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/exercise_4" />
+                </LinearLayout>
+
+                <!--                Vertical LinearLayout for the arrow Image View-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--            TableRow to create a horizontal line to separate the exercise-->
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="1.0dp"
                 android:background="@color/black" />
 
+            <!--            Exercise 5-->
+            <!--            Horizontal LinearLayout to act as a row for the exercise -->
             <LinearLayout
+                android:id="@+id/exercise_5"
                 android:layout_width="fill_parent"
                 android:layout_height="110dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:layout_marginTop="10dp"
+                android:onClick="imageButtonClicked"
+                android:orientation="horizontal"
+                android:padding="10dp">
 
+                <!--                Vertical Linear Layout for the Exercise details (Text)-->
                 <LinearLayout
-                    android:id="@+id/exercise_4"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:onClick="imageButtonClicked"
-                    android:orientation="horizontal"
-                    android:padding="10dp">
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="1.0"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/crossKneeToElbowText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="Cross Knees to Elbow"
-                            android:textAllCaps="true"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/crossKneeToElbowAmountText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="Repeat 2 Times"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="01:00 MIN"
-                            android:textColor="@color/black" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2.0">
-
-                        <pl.droidsonroids.gif.GifImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/exercise_4" />
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/legRaiseText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="0"
-                        android:gravity="center">
+                        android:fontFamily="@font/poppins"
+                        android:text="Legs Raise"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
 
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="5dp"
-                            android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
-                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/legRaiseAmountText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Repeat 2 Times"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="01:00 MIN"
+                        android:textColor="@color/black" />
                 </LinearLayout>
 
+                <!--                Vertical LinearLayout for the exercise gif-->
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.0">
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/exercise_5" />
+                </LinearLayout>
+
+                <!--                Vertical LinearLayout for the arrow Image View-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+                </LinearLayout>
             </LinearLayout>
 
-            <!--                Exercise 5-->
 
+            <!--            TableRow to create a horizontal line to separate the exercise-->
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="1.0dp"
                 android:background="@color/black" />
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="110dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:id="@+id/exercise_5"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:onClick="imageButtonClicked"
-                    android:orientation="horizontal"
-                    android:padding="10dp">
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="1.0"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/legRaiseText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="Legs Raise"
-                            android:textAllCaps="true"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/legRaiseAmountText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="Repeat 2 Times"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="01:00 MIN"
-                            android:textColor="@color/black" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2.0">
-
-                        <pl.droidsonroids.gif.GifImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/exercise_5" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="0"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="5dp"
-                            android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
-                    </LinearLayout>
-                </LinearLayout>
-
-            </LinearLayout>
 
             <!--                Exercise 6-->
+            <!--            Horizontal LinearLayout to act as a row for the exercise -->
+            <LinearLayout
+                android:id="@+id/exercise_6"
+                android:layout_width="fill_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="10dp"
+                android:onClick="imageButtonClicked"
+                android:orientation="horizontal"
+                android:padding="10dp">
 
+                <!--                Vertical Linear Layout for the Exercise details (Text)-->
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/alternateHeelTouchText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Alternate Heel Touches"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/alternateHeelTouchAmountText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Repeat 2 Times"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="01:00 MIN"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <!--                Vertical LinearLayout for the exercise gif-->
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.0">
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/exercise_6" />
+                </LinearLayout>
+
+                <!--                Vertical LinearLayout for the arrow Image View-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <!--            TableRow to create a horizontal line to separate the exercise-->
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="1.0dp"
                 android:background="@color/black" />
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="110dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:id="@+id/exercise_6"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:onClick="imageButtonClicked"
-                    android:orientation="horizontal"
-                    android:padding="10dp">
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="1.0"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/alternateHeelTouchText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="Alternate Heel Touches"
-                            android:textAllCaps="true"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/alternateHeelTouchAmountText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="Repeat 2 Times"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="01:00 MIN"
-                            android:textColor="@color/black" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2.0">
-
-                        <pl.droidsonroids.gif.GifImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/exercise_6" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="0"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="5dp"
-                            android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
-                    </LinearLayout>
-                </LinearLayout>
-
-            </LinearLayout>
 
             <!--                Exercise 7-->
-
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="1.0dp"
-                android:background="@color/black" />
-
+            <!--            Horizontal LinearLayout to act as a row for the exercise -->
             <LinearLayout
+                android:id="@+id/exercise_7"
                 android:layout_width="fill_parent"
                 android:layout_height="110dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:layout_marginTop="10dp"
+                android:onClick="imageButtonClicked"
+                android:orientation="horizontal"
+                android:padding="10dp">
 
+                <!--                Vertical Linear Layout for the Exercise details (Text)-->
                 <LinearLayout
-                    android:id="@+id/exercise_7"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:onClick="imageButtonClicked"
-                    android:orientation="horizontal"
-                    android:padding="10dp">
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="1.0"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/crunchText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="Crunch"
-                            android:textAllCaps="true"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/crunchAmountText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="Repeat 2 Times"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/poppins"
-                            android:text="01:00 MIN"
-                            android:textColor="@color/black" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2.0">
-
-                        <pl.droidsonroids.gif.GifImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/exercise_7" />
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/crunchText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="0"
-                        android:gravity="center">
+                        android:fontFamily="@font/poppins"
+                        android:text="Crunch"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
 
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="5dp"
-                            android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
-                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/crunchAmountText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Repeat 2 Times"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="01:00 MIN"
+                        android:textColor="@color/black" />
                 </LinearLayout>
 
+                <!--                Vertical LinearLayout for the exercise gif-->
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.0">
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/exercise_7" />
+                </LinearLayout>
+
+                <!--                Vertical LinearLayout for the arrow Image View-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+                </LinearLayout>
             </LinearLayout>
 
+            <!--            TableRow to create a horizontal line to separate the exercise-->
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="1.0dp"

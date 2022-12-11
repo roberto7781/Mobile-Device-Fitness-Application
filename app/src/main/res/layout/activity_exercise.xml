@@ -7,13 +7,14 @@
     android:orientation="vertical"
     tools:context=".ActivityExercise">
 
-
+    <!--    Horizontal LinearLayout to store the exercise gif-->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal">
 
+        <!--        GifImageView exercise gif-->
         <pl.droidsonroids.gif.GifImageView
             android:id="@+id/exerciseGif"
             android:layout_width="wrap_content"
@@ -23,6 +24,7 @@
     </LinearLayout>
 
 
+    <!--    TextView used to show the exercise name-->
     <TextView
         android:id="@+id/exerciseNameText"
         android:layout_width="match_parent"
@@ -34,6 +36,7 @@
         android:textFontWeight="600"
         android:textSize="40dp" />
 
+    <!--    TextView to show how many times does the user need to repeat the exercise-->
     <TextView
         android:id="@+id/exerciseRepeatText"
         android:layout_width="match_parent"
@@ -45,6 +48,7 @@
         android:textColor="#595959"
         android:textSize="25sp" />
 
+    <!--    Button that act as the exercise countdown timer-->
     <Button
         android:id="@+id/time"
         android:layout_width="wrap_content"
@@ -58,27 +62,38 @@
         android:textColor="#FFFFFF"
         android:textSize="24sp" />
 
-    <LinearLayout
+    <!--ScrollView in case the text is longer than the fixed space-->
+    <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="200dp"
         android:layout_margin="20dp"
         android:layout_marginTop="30dp"
-        android:background="#FFF"
-        android:orientation="vertical">
+        android:scrollbars="none">
 
-        <TextView
-            android:id="@+id/howToDoText"
+        <!--    VerticalLinear Layout to store the step by step guide on how to do the exercise-->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:padding="7dp"
-            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
-            android:textAlignment="viewStart"
-            android:textColor="#595959"
-            android:textSize="16sp" />
-    </LinearLayout>
+            android:padding="10dp"
+            android:background="#FFF"
+            android:orientation="vertical">
+
+            <!--        TextView to show how to do the exercise-->
+            <TextView
+                android:id="@+id/howToDoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:padding="7dp"
+                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
+                android:textAlignment="viewStart"
+                android:textColor="#595959"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </ScrollView>
 
 
+    <!--Horizontal LinearLayout to store button-->
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -86,6 +101,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
+        <!--        Button to start the exercise-->
         <Button
             android:id="@+id/startBtn"
             android:layout_width="wrap_content"

@@ -4,12 +4,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fitnessapplication.adapter.ActivityHistoryAdapter;
@@ -56,32 +53,7 @@ public class ExerciseHistoryActivity extends AppCompatActivity {
         listView.setAdapter(activityHistoryAdapter);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem menuItem) {
-        int id = menuItem.getItemId();
-
-        if (id == R.id.privacyPolicy) {
-            return true;
-        }
-
-        if (id == R.id.termAndCondition) {
-            return true;
-        }
-
-        if (id == R.id.share) {
-            return true;
-        }
-
-        return true;
-    }
-
-    public void goBack(View view){
+    public void goBack(View view) {
         Intent intent = new Intent(ExerciseHistoryActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
