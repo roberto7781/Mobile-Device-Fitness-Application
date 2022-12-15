@@ -94,15 +94,15 @@ public class DBHelper extends SQLiteOpenHelper {
             //Closing the cursor because it won't be use anymore
             cursor.close();
 
-            //Return false because the username is not available
-            return false;
+            //Return false because the account is not available
+            return true;
         }
 
         //Closing the cursor because it won't be use anymore
         cursor.close();
 
-        //Return true because the username is available.
-        return true;
+        //Return true because the account is available.
+        return false;
     }
 
     //This method is used to update account data.

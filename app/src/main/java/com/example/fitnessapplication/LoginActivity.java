@@ -38,7 +38,8 @@ public class LoginActivity extends AppCompatActivity {
             //Initializing username, and password from the EditText elements.
             String user = username.getText().toString();
             String pass = password.getText().toString();
-
+            System.out.println(user);
+            System.out.println(pass);
             //Selection to determine whether the input is correct or not
             //Check whether the user hasn't inputted any value
             if (user.equals("") || pass.equals("")) {
