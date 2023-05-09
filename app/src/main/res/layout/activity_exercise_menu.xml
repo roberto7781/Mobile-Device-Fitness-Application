@@ -7,181 +7,195 @@
     android:orientation="vertical"
     tools:context=".ExerciseMenuActivity">
 
-    <!--    Vertical Linear Layout to store the exercise card view-->
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_rect_bg"
-        android:orientation="vertical">
+<!--    Scroll View to cater for small screen device-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
-        <!--        CardView used as the background of the card-->
-        <androidx.cardview.widget.CardView
-            android:layout_width="330dp"
-            android:layout_height="450dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:backgroundTint="#FFFFFF"
-            android:onClick="absWorkout"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="20dp">
-
-            <!--            Vertical LinearLayout to store all of card view elements-->
+<!--        Vertical LinearLayout-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--    Vertical Linear Layout to store the exercise card view-->
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_rect_bg"
                 android:orientation="vertical">
 
-                <!--                The Exercise image (Could be either abs, arm, or leg exercise)-->
-                <!--The Image will be different depending which exercise the user choose on the previous page-->
-                <ImageView
-                    android:id="@+id/exerciseImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="350dp"
+                <!--        CardView used as the background of the card-->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="330dp"
+                    android:layout_height="450dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/abs_exercise_image" />
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:onClick="absWorkout"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="20dp">
+
+                    <!--            Vertical LinearLayout to store all of card view elements-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <!--                The Exercise image (Could be either abs, arm, or leg exercise)-->
+                        <!--The Image will be different depending which exercise the user choose on the previous page-->
+                        <ImageView
+                            android:id="@+id/exerciseImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="350dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/abs_exercise_image" />
 
 
-                <!--                Horizontal Linear Layout to store TextView elements-->
+                        <!--                Horizontal Linear Layout to store TextView elements-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <!--                    TextView to show exercise title-->
+                            <TextView
+                                android:id="@+id/exerciseTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/poppins"
+                                android:gravity="bottom"
+                                android:padding="10dp"
+                                android:text="Abs \nExercise"
+                                android:textColor="#595959"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <!--                    TextView to show how long will the exercise take-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:layout_weight="1"
+                                android:drawableStart="@drawable/ic_baseline_access_time_24_gray"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/poppins"
+                                android:gravity="center_vertical"
+                                android:padding="8dp"
+                                android:text="8 Min"
+                                android:textColor="#595959" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!--Vertical LinearLayout to store TextView-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
-                    <!--                    TextView to show exercise title-->
-                    <TextView
-                        android:id="@+id/exerciseTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/poppins"
-                        android:gravity="bottom"
-                        android:padding="10dp"
-                        android:text="Abs \nExercise"
-                        android:textColor="#595959"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
-
-                    <!--                    TextView to show how long will the exercise take-->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="17dp"
-                        android:layout_weight="1"
-                        android:drawableStart="@drawable/ic_baseline_access_time_24_gray"
-                        android:drawablePadding="8dp"
+                        android:layout_gravity="center_horizontal"
                         android:fontFamily="@font/poppins"
-                        android:gravity="center_vertical"
-                        android:padding="8dp"
-                        android:text="8 Min"
-                        android:textColor="#595959" />
+                        android:text="Choose your difficulty"
+                        android:textColor="#FFFFFF"
+                        android:textFontWeight="600"
+                        android:textSize="20sp" />
                 </LinearLayout>
+
+                <!--RadioGroup so the user can select workout difficulties -->
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <!--            RadioButton for easy difficulty-->
+                    <RadioButton
+                        android:id="@+id/easyDifficulty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_flat_selector"
+                        android:button="@android:color/transparent"
+                        android:checked="true"
+                        android:fontFamily="@font/poppins"
+                        android:onClick="onRadioButtonClicked"
+                        android:padding="5dp"
+                        android:text="Easy"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textFontWeight="600"
+                        android:textSize="22sp" />
+
+                    <!--            RadioButton for medium difficulty-->
+                    <RadioButton
+                        android:id="@+id/mediumDifficulty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_flat_selector"
+                        android:button="@android:color/transparent"
+                        android:checked="false"
+                        android:fontFamily="@font/poppins"
+                        android:onClick="onRadioButtonClicked"
+                        android:padding="5dp"
+                        android:text="Medium"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textFontWeight="600"
+                        android:textSize="22sp" />
+
+                    <!--            RadioButton for hard difficulty-->
+                    <RadioButton
+                        android:id="@+id/hardDifficulty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_flat_selector"
+                        android:button="@android:color/transparent"
+                        android:checked="false"
+                        android:fontFamily="@font/poppins"
+                        android:onClick="onRadioButtonClicked"
+                        android:padding="5dp"
+                        android:text="Hard"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textFontWeight="600"
+                        android:textSize="22sp" />
+                </RadioGroup>
+
+
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
 
-        <!--Vertical LinearLayout to store TextView-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
+            <!--    Button to go to the exercise list view-->
+            <Button
+                android:id="@+id/startButton"
+                android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/button_bg_round"
+                android:backgroundTint="#00DCDC"
                 android:fontFamily="@font/poppins"
-                android:text="Choose your difficulty"
+                android:text="Start"
+                android:textAlignment="center"
+                android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textFontWeight="600"
-                android:textSize="20sp" />
+                android:textSize="24sp" />
         </LinearLayout>
 
-        <!--RadioGroup so the user can select workout difficulties -->
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:padding="10dp">
-
-            <!--            RadioButton for easy difficulty-->
-            <RadioButton
-                android:id="@+id/easyDifficulty"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/radio_flat_selector"
-                android:button="@android:color/transparent"
-                android:checked="true"
-                android:fontFamily="@font/poppins"
-                android:onClick="onRadioButtonClicked"
-                android:padding="5dp"
-                android:text="Easy"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textFontWeight="600"
-                android:textSize="22sp" />
-
-            <!--            RadioButton for medium difficulty-->
-            <RadioButton
-                android:id="@+id/mediumDifficulty"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/radio_flat_selector"
-                android:button="@android:color/transparent"
-                android:checked="false"
-                android:fontFamily="@font/poppins"
-                android:onClick="onRadioButtonClicked"
-                android:padding="5dp"
-                android:text="Medium"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textFontWeight="600"
-                android:textSize="22sp" />
-
-            <!--            RadioButton for hard difficulty-->
-            <RadioButton
-                android:id="@+id/hardDifficulty"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/radio_flat_selector"
-                android:button="@android:color/transparent"
-                android:checked="false"
-                android:fontFamily="@font/poppins"
-                android:onClick="onRadioButtonClicked"
-                android:padding="5dp"
-                android:text="Hard"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textFontWeight="600"
-                android:textSize="22sp" />
-        </RadioGroup>
-
-
-    </LinearLayout>
-
-    <!--    Button to go to the exercise list view-->
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/button_bg_round"
-        android:backgroundTint="#00DCDC"
-        android:fontFamily="@font/poppins"
-        android:text="Start"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textFontWeight="600"
-        android:textSize="24sp" />
+    </ScrollView>
 
 
 </LinearLayout>

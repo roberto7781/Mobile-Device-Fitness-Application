@@ -33,7 +33,7 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/poppins"
                 android:paddingLeft="10dp"
-                android:text="Exercise History"
+                android:text="Tips and Trick"
                 android:textColor="#FFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
